@@ -1,8 +1,8 @@
 %_________________________________________________________________________%
 %Jaya算法             %
 %_________________________________________________________________________%
-function [GBestX,GBestF,curve]=JAYA(pop,Max_iter,lb,ub,dim,fobj)
-tic
+function [GBestX,GBestF,curve,Div]=JAYA(pop,Max_iter,lb,ub,dim,fobj)
+% tic
 if(max(size(ub)) == 1)
    ub = ub.*ones(1,dim);
    lb = lb.*ones(1,dim);  
@@ -28,7 +28,6 @@ end
 
 GBestX = X(1,:);%全局最优位置
 curve(1)=GBestF;
-
 
 X_new = X;
 t=2;
@@ -76,8 +75,8 @@ end
 
 % Best_pos = GBestX;
 % Best_score = curve(end);
-toc
-disp(['The runtime of JAYA: ',num2str(toc)]);
+% toc
+% disp(['The runtime of JAYA: ',num2str(toc)]);
 end
 
 
